@@ -6,7 +6,8 @@
 
 function install_nginx {
         log "Installing nginx..."
-	aptitude install -y nginx
+	sudo add-apt-repository ppa:ondrej/nginx-mainline
+	sudo apt install nginx
 }
 
 function create_nginx_wordpress_site {
@@ -30,7 +31,7 @@ server {
     location ~ \.php$ {
         try_files \$uri =404;
         fastcgi_index index.php;
-        fastcgi_pass php5-fpm-sock;
+        fastcgi_pass php-fpm-sock;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         include /etc/nginx/fastcgi_params;
     }

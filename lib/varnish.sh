@@ -7,9 +7,9 @@
 function install_varnish {
   log "Installing varnish..."
   aptitude install -y varnish
-  echo "apc.shm_size=100M" >> /etc/php5/fpm/conf.d/apc.ini
-  /etc/init.d/varnish restart
-  /etc/init.d/nginx restart
+  # echo "apc.shm_size=100M" >> /etc/php7.2/fpm/conf.d/apc.ini
+  
+  # /etc/init.d/nginx restart
 }
 
 function setup_varnish_wordpress_vcl {
@@ -63,12 +63,12 @@ sub vcl_fetch {
     }
 }
 EOF
-  IP_ADDRESS=$(system_ip)
-  log "Ip address found: $IP_ADDRESS"
-  sed -i "s/:6081/$IP_ADDRESS:80/" /etc/default/varnish
-  sed -i "s/default.vcl/wordpress.vcl/" /etc/default/varnish
-  sed -i "s/malloc,256m/file,\/var\/lib\/varnish\/\$INSTANCE\/varnish_storage.bin,1G/" /etc/default/varnish
-  /etc/init.d/varnish restart
-  /etc/init.d/php5-fpm stop
-  /etc/init.d/php5-fpm start
+  # IP_ADDRESS=$(system_ip)
+  # log "Ip address found: $IP_ADDRESS"
+  # sed -i "s/:6081/$IP_ADDRESS:80/" /etc/default/varnish
+  # sed -i "s/default.vcl/wordpress.vcl/" /etc/default/varnish
+  # sed -i "s/malloc,256m/file,\/var\/lib\/varnish\/\$INSTANCE\/varnish_storage.bin,1G/" /etc/default/varnish
+  # /etc/init.d/varnish restart
+  # /etc/init.d/php-fpm stop
+  # /etc/init.d/php-fpm start
 }

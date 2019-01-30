@@ -24,10 +24,10 @@ function install_wordpress {
 	install_mysql $MYSQL_ROOT_PASSWORD && tune_mysql 40
 	install_memcached
 	install_nginx
-#	install_php5_fpm
+	install_php_fpm
 	install_varnish
         setup_varnish_wordpress_vcl
-#       setup_php5_fpm_with_nginx
+        setup_php_fpm_with_nginx
         create_nginx_wordpress_site $WP_DOMAIN
         enable_nginx_site wordpress
         disable_nginx_site default

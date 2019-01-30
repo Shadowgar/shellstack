@@ -24,12 +24,12 @@ function install_php_fpm {
 function setup_php7.3_fpm_with_nginx {
   cat > /etc/nginx/sites-available/default << EOF
 location ~ \.php$ {
-include snippets/fastcgi-php.conf;
+include etc/nginx/snippets/fastcgi-php.conf;
 
 # With php7.3-cgi alone:
 # fastcgi_pass 127.0.0.1:9000;
 # With php7.3-fpm:
-fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+#fastcgi_pass unix:/run/php/7.3/php7.3-fpm.sock;
 }
 EOF
 }

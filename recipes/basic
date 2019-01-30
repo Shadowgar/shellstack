@@ -5,7 +5,7 @@ source "$LIB_PATH/user.sh"
 source "$LIB_PATH/security.sh"
 
 function defaults_basic {
-	#TODO: verify if vars are set and then use defautls our get 'em another way
+	#TODO: verify if vars are set and then use defautls or get 'em another way
 	HOST_NAME="rocco.gq"
 	USER_NAME="root"
 	USER_PASSWORD="Chromazomes1234!"
