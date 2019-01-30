@@ -8,14 +8,14 @@ source "$LIB_PATH/php.sh"
 source "$LIB_PATH/wordpress.sh"
 
 function defaults_wordpress {
-	MYSQL_ROOT_PASSWORD="mydbs3cr3t"
-        WP_DOMAIN="mydomain.com"
-        WP_MYSQL_USERNAME='myuser'
-        WP_MYSQL_PASSWORD='mydbs3cr3t'
+	MYSQL_ROOT_PASSWORD="Stacy9415!"
+        WP_DOMAIN="rocco.gq"
+        WP_MYSQL_USERNAME='wpadmin'
+        WP_MYSQL_PASSWORD='Stacy9415!'
         WP_DATABASE_NAME='mydb_wp'
-        WP_USERNAME='myuser'
-        WP_PASSWORD='mys3cr3t'
-        WP_EMAIL='my@email.com'
+        WP_USERNAME='wpadmin'
+        WP_PASSWORD='Stacy9415!'
+        WP_EMAIL='rocco.paul@gmail.com'
         WP_PUBLIC_BLOG=1
 }
 
@@ -24,10 +24,10 @@ function install_wordpress {
 	install_mysql $MYSQL_ROOT_PASSWORD && tune_mysql 40
 	install_memcached
 	install_nginx
-	install_php5_fpm
+#	install_php5_fpm
 	install_varnish
         setup_varnish_wordpress_vcl
-        setup_php5_fpm_with_nginx
+#       setup_php5_fpm_with_nginx
         create_nginx_wordpress_site $WP_DOMAIN
         enable_nginx_site wordpress
         disable_nginx_site default

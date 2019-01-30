@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function install_nodejs {
-  apt-get -y install python-software-properties
-  add-apt-repository ppa:chris-lea/node.js
+  sudo apt-get install -y software-properties-common
+  curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
   apt-get -y update
-  apt-get -y install nodejs nodejs-dev
+  sudo apt-get install -y nodejs
 }
