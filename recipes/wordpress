@@ -8,14 +8,14 @@ source "$LIB_PATH/php.sh"
 source "$LIB_PATH/wordpress.sh"
 
 function defaults_wordpress {
-	MYSQL_ROOT_PASSWORD="Stacy9415!"
-        WP_DOMAIN="rocco.gq"
-        WP_MYSQL_USERNAME='wpadmin'
-        WP_MYSQL_PASSWORD='Stacy9415!'
+	MYSQL_ROOT_PASSWORD="somepassword"
+        WP_DOMAIN="domainnamehere"
+        WP_MYSQL_USERNAME='someusername'
+        WP_MYSQL_PASSWORD='somepassword'
         WP_DATABASE_NAME='mydb_wp'
-        WP_USERNAME='wpadmin'
-        WP_PASSWORD='Stacy9415!'
-        WP_EMAIL='rocco.paul@gmail.com'
+        WP_USERNAME='someusername'
+        WP_PASSWORD='somepassword'
+        WP_EMAIL='emailaddress'
         WP_PUBLIC_BLOG=1
 }
 

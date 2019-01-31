@@ -6,9 +6,9 @@ source "$LIB_PATH/security.sh"
 
 function defaults_basic {
 	#TODO: verify if vars are set and then use defautls or get 'em another way
-	HOST_NAME="rocco.gq"
+	HOST_NAME="domainnamehere"
 	USER_NAME="root"
-	USER_PASSWORD="Chromazomes1234!"
+	USER_PASSWORD="somepassword"
 #	USER_SSH_KEY="ssh-rsa paste here your ~/.ssh/id_rsa.pub"
 }
 
